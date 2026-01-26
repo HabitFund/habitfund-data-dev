@@ -1,0 +1,65 @@
+[
+  {
+    "id": "jp_religion_001",
+    "name": "浄土宗ともいき財団",
+    "category": "religion",
+    "country": "JP",
+    "tags": ["仏教", "浄土宗", "共生"],
+    "url": "https://www.tomoiki.jp/",
+    "desc": "仏教の「共生（ともいき）」の精神に基づき、社会貢献活動を支援しています。"
+  },
+  {
+    "id": "jp_earth_001",
+    "name": "日本自然保護協会",
+    "category": "earth",
+    "country": "JP",
+    "tags": ["自然保護", "環境", "里山"],
+    "url": "https://www.nacsj.or.jp/",
+    "desc": "絶滅危惧種の保護や豊かな自然環境を次世代に引き継ぐための活動を行っています。"
+  },
+  {
+    "id": "jp_human_001",
+    "name": "ピースウィンズ・ジャパン",
+    "category": "human",
+    "country": "JP",
+    "tags": ["緊急人道支援", "難民支援", "災害救조"],
+    "url": "https://peace-winds.org/",
+    "desc": "紛争や災害の現場で、人々の命を救い生活を再建するための支援を届けます。"
+  },
+  {
+    "id": "jp_human_002",
+    "name": "日本ユニセフ協会",
+    "category": "human",
+    "country": "JP",
+    "tags": ["子供支援", "世界平和", "募金"],
+    "url": "https://www.unicef.or.jp/",
+    "desc": "世界中の子供たちの命と権利を守るため、保健、栄養、教育などの支援を行っています。"
+  },
+  {
+    "id": "jp_civic_001",
+    "name": "日本ファンドレイジング協会",
+    "category": "civic",
+    "country": "JP",
+    "tags": ["寄付文化", "社会貢献", "市民活動"],
+    "url": "https://jfra.jp/",
+    "desc": "寄付の力を通じて、より良い社会を作るための仕組み作りを推進しています。"
+  },
+  {
+    "id": "jp_fandom_001",
+    "name": "文化財保護・芸術研究助成財団",
+    "category": "fandom",
+    "country": "JP",
+    "tags": ["芸術", "文化財", "伝統芸能"],
+    "url": "http://www.bunka.or.jp/",
+    "desc": "日本の貴重な文化遺産や芸術活動を保護し、未来へと伝承します。"
+  },
+  {
+    "id": "jp_community_001",
+    "name": "全国こども食堂支援センター",
+    "category": "community",
+    "country": "JP",
+    "tags": ["こども食堂", "地域交流", "福祉"],
+    "url": "https://musubie.org/",
+    "desc": "地域の中で子供たちが安心して過ごせる「こども食堂」の活動を支援しています。"
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "us_religion_001",
+    "name": "Salvation Army USA",
+    "category": "religion",
+    "country": "US",
+    "tags": ["christian", "charity", "social-services"],
+    "url": "https://www.salvationarmyusa.org/",
+    "desc": "Assisting people in need without discrimination through spiritual and social support."
+  },
+  {
+    "id": "us_earth_001",
+    "name": "Sierra Club",
+    "category": "earth",
+    "country": "US",
+    "tags": ["nature", "climate", "conservation"],
+    "url": "https://www.sierraclub.org/",
+    "desc": "The most enduring and influential grassroots environmental organization in the United States."
+  },
+  {
+    "id": "us_earth_002",
+    "name": "Best Friends Animal Society",
+    "category": "earth",
+    "country": "US",
+    "tags": ["pets", "no-kill", "animal-rescue"],
+    "url": "https://bestfriends.org/",
+    "desc": "Working to save the lives of homeless pets and end the killing in America's shelters."
+  },
+  {
+    "id": "us_human_001",
+    "name": "Amnesty International USA",
+    "category": "human",
+    "country": "US",
+    "tags": ["human-rights", "justice", "activism"],
+    "url": "https://www.amnestyusa.org/",
+    "desc": "A global movement of people fighting injustice and promoting human rights."
+  },
+  {
+    "id": "us_human_002",
+    "name": "International Rescue Committee",
+    "category": "human",
+    "country": "US",
+    "tags": ["refugees", "crisis", "global-aid"],
+    "url": "https://www.rescue.org/",
+    "desc": "Helping people whose lives are shattered by conflict and disaster to survive and recover."
+  },
+  {
+    "id": "us_civic_001",
+    "name": "League of Women Voters",
+    "category": "civic",
+    "country": "US",
+    "tags": ["voting-rights", "democracy", "civic-duty"],
+    "url": "https://www.lwv.org/",
+    "desc": "Empowering voters and defending democracy through education and advocacy."
+  },
+  {
+    "id": "us_fandom_001",
+    "name": "Broadway Cares",
+    "category": "fandom",
+    "country": "US",
+    "tags": ["theatre", "arts", "health-support"],
+    "url": "https://broadwaycares.org/",
+    "desc": "Mobilizing the unique resources of the entertainment industry to help people with health challenges."
+  },
+  {
+    "id": "us_community_001",
+    "name": "Feeding America",
+    "category": "community",
+    "country": "US",
+    "tags": ["hunger", "food-bank", "local-help"],
+    "url": "https://www.feedingamerica.org/",
+    "desc": "A nationwide network of food banks that feeds more than 46 million people."
+  }
+]
