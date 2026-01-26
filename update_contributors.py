@@ -5,7 +5,7 @@ import os
 # 1. 구글 시트 정보 (Secrets 사용 권장)
 import os as env_os
 SHEET_ID = env_os.environ.get('GOOGLE_SHEET_ID', '여기에_시트_ID_직접입력(테스트용)')
-SHEET_URL = f"https://docs.google.com/spreadsheets/d/{SHEET_ID}/export?format=csv"
+SHEET_URL = f"https://docs.google.com/spreadsheets/d/1qfWSyzZ0ny2DZVRciA9dr_gYlp6UCierU5o6Mbo9UPU/export?format=csv"
 
 COUNTRY_MAP = {
     "South Korea": "kr",
