@@ -1,7 +1,7 @@
 name: Sync Google Sheets to JSON
 on:
-  schedule:
-    - cron: '0 * * * *' # 매 시간마다 자동 실행
+  # schedule:
+  #   - cron: '0 * * * *' # 매 시간마다 자동 실행
   workflow_dispatch:      # 필요할 때 수동 실행 버튼 활성화
 
 jobs:
