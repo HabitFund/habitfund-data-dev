@@ -1,13 +1,12 @@
 import pandas as pd
 import json
 import os
-import re
 
-# 1. 구글 시트 정보 (본인의 시트 ID로 교체하세요)
-SHEET_ID = "여기에_복사한_시트_ID를_넣으세요"
-SHEET_URL = f"https://docs.google.com/spreadsheets/d/1qfWSyzZ0ny2DZVRciA9dr_gYlp6UCierU5o6Mbo9UPU/export?format=csv"
+# 1. 구글 시트 정보 (Secrets 사용 권장)
+import os as env_os
+SHEET_ID = env_os.environ.get('GOOGLE_SHEET_ID', '여기에_시트_ID_직접입력(테스트용)')
+SHEET_URL = f"https://docs.google.com/spreadsheets/d/{SHEET_ID}/export?format=csv"
 
-# 2. 국가명 -> 파일명 매핑 (추가 가능)
 COUNTRY_MAP = {
     "South Korea": "kr",
     "United States": "en",
@@ -16,46 +15,43 @@ COUNTRY_MAP = {
 }
 
 def clean_category(val):
-    # "religion - 종교..." 에서 "religion"만 추출
-    if pd.isna(val): return ""
-    return val.split(' - ')[0].strip()
+    if not val: return ""
+    return str(val).split(' - ')[0].strip()
+
+def index_to_id(file_code, idx):
+    return f"{file_code}_{idx+1:03d}"
 
 def main():
-    # 데이터 불러오기
+    # 데이터 로드
     df = pd.read_csv(SHEET_URL)
     
-    # 카테고리 정제
-    df['Category'] = df['Category'].apply(clean_category)
+    # NaN 결측치를 빈 문자열로 처리 (JSON 깨짐 방지)
+    df = df.fillna("")
     
-    # 국가별로 그룹화하여 파일 저장
+    # 폴더 생성
+    os.makedirs('contributors', exist_ok=True)
+    
+    # 국가별 분류
     for country_name, group in df.groupby('Country'):
         file_code = COUNTRY_MAP.get(country_name, country_name.lower().replace(" ", "_"))
         filename = f"contributors/{file_code}.json"
         
-        # JSON 구조 생성
         json_data = []
-        for _, row in group.iterrows():
+        for i, (index, row) in enumerate(group.iterrows()):
             item = {
-                "id": f"{file_code}_{index_to_id(row.name)}", # 간단한 ID 생성기
+                "id": index_to_id(file_code, i),
                 "name": row['Organization Name'],
-                "category": row['Category'],
+                "category": clean_category(row['Category']),
                 "country": file_code.upper(),
-                "tags": [t.strip() for t in str(row['Search Tags']).split(',')] if pd.notna(row['Search Tags']) else [],
-                "url": row['Official URL'],
+                "tags": [t.strip() for t in str(row['Search Tags']).split(',')] if row['Search Tags'] else [],
+                "url": row['Official URL'], # 이제 NaN 대신 "" 가 들어갑니다.
                 "desc": row['Description']
             }
             json_data.append(item)
-        
-        # 폴더가 없으면 생성
-        os.makedirs('contributors', exist_ok=True)
-        
-        # 파일 쓰기
+            
         with open(filename, 'w', encoding='utf-8') as f:
             json.dump(json_data, f, ensure_ascii=False, indent=2)
-            print(f"Saved {filename}")
-
-def index_to_id(idx):
-    return f"{idx+1:03d}"
+            print(f"✅ Saved {filename}")
 
 if __name__ == "__main__":
     main()
