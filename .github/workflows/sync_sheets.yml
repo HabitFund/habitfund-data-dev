@@ -1,0 +1,26 @@
+name: Sync Google Sheets to JSON
+on:
+  schedule:
+    - cron: '0 * * * *' # 매 시간마다 자동 실행
+  workflow_dispatch:      # 필요할 때 수동 실행 버튼 활성화
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Install dependencies
+        run: pip install pandas
+      - name: Run update script
+        run: python update_contributors.py
+      - name: Commit and Push
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          git add contributors/*.json
+          git commit -m "Auto-update contributors from Google Sheets" || exit 0
+          git push
