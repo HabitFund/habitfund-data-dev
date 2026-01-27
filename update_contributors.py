@@ -96,7 +96,7 @@ def main():
         
         # 3. 인덱스 정보 수집 (풀네임 및 국기 포함)
         index_data.append({
-            "name": full_name,      # 국가 전체 이름
+            "country": full_name,      # 국가 전체 이름
             "code": file_code,      # kr, us 등 소문자 코드
             "flag": flag_url,       # 국기 이미지 URL
             "path": relative_path,  # 파일 경로
