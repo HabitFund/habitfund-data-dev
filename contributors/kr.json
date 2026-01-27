@@ -1,22 +1,119 @@
 [
   {
     "id": "kr_001",
-    "name": "HabitFund Contribution",
-    "category": "community",
+    "name": "대한불교조계종 사회복지재단",
+    "category": "religion",
     "country": "KR",
     "tags": [
-      "habitfund"
+      "불교",
+      "자비",
+      "사찰복지"
     ],
-    "url": "https://foolishmind.dev/habitfund",
-    "desc": "HabitFund 잘돼야지."
+    "url": "http://www.asoka.or.kr/",
+    "desc": "부처님의 자비사상을 바탕으로 국내외 소외된 이웃을 위해 복지 서비스를 제공합니다."
   },
   {
     "id": "kr_002",
-    "name": "조직A",
+    "name": "한국 가톨릭 사회복지회",
     "category": "religion",
     "country": "KR",
-    "tags": [],
-    "url": "",
-    "desc": "설명"
+    "tags": [
+      "가톨릭",
+      "천주교",
+      "사회봉사"
+    ],
+    "url": "http://www.caritas.or.kr",
+    "desc": "그리스도의 사랑을 실천하며 인간 존엄성을 지키는 복지 세상을 만듭니다."
+  },
+  {
+    "id": "kr_003",
+    "name": "그린피스 서울사무소",
+    "category": "earth",
+    "country": "KR",
+    "tags": [
+      "환경",
+      "기후위기",
+      "북극곰"
+    ],
+    "url": "https://www.greenpeace.org/korea",
+    "desc": "지구 환경 보호와 평화를 위해 행동으로 변화를 만드는 독립적인 국제 환경단체입니다."
+  },
+  {
+    "id": "kr_004",
+    "name": "동물권행동 카라",
+    "category": "earth",
+    "country": "KR",
+    "tags": [
+      "동물권",
+      "유기견",
+      "동물보호"
+    ],
+    "url": "https://www.ekara.org/",
+    "desc": "모든 생명이 존중받는 세상을 위해 동물의 권리를 옹호하고 구조 활동을 펼칩니다."
+  },
+  {
+    "id": "kr_005",
+    "name": "국경없는의사회 한국",
+    "category": "human",
+    "country": "KR",
+    "tags": [
+      "의료구호",
+      "긴급구호",
+      "인권"
+    ],
+    "url": "https://msf.or.kr/",
+    "desc": "무력분쟁, 전염병, 자연재해 등 위기에 처한 사람들에게 긴급 의료지원을 제공합니다."
+  },
+  {
+    "id": "kr_006",
+    "name": "세이브더칠드런 코리아",
+    "category": "human",
+    "country": "KR",
+    "tags": [
+      "아동권리",
+      "교육지원",
+      "난민아동"
+    ],
+    "url": "https://www.sc.or.kr/",
+    "desc": "전 세계 아동의 생존, 보호, 발달 및 참여의 권리를 실현하기 위해 활동합니다."
+  },
+  {
+    "id": "kr_007",
+    "name": "희망제작소",
+    "category": "civic",
+    "country": "KR",
+    "tags": [
+      "시민참여",
+      "사회혁신",
+      "지역자치"
+    ],
+    "url": "https://www.makehope.org/",
+    "desc": "시민의 아이디어를 현실로 만들어 사회의 기분 좋은 변화를 이끌어냅니다."
+  },
+  {
+    "id": "kr_008",
+    "name": "한국메이크어위시재단",
+    "category": "fandom",
+    "country": "KR",
+    "tags": [
+      "소원성취",
+      "아이돌기부",
+      "문화지원"
+    ],
+    "url": "https://www.wish.or.kr/",
+    "desc": "난치병 아이들의 소원을 이루어주어 삶의 희망과 에너지를 전합니다."
+  },
+  {
+    "id": "kr_009",
+    "name": "아름다운재단",
+    "category": "community",
+    "country": "KR",
+    "tags": [
+      "이웃돕기",
+      "기부문화",
+      "지역사회"
+    ],
+    "url": "https://beautifulfund.org/",
+    "desc": "건강한 기부 문화를 확산시키고 소외계층의 자립을 지원하는 독립 재단입니다."
   }
 ]
