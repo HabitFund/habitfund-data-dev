@@ -2,21 +2,21 @@
   {
     "name": "Japan",
     "code": "jp",
-    "flag": "https://flagcdn.com/w80/jp.png",
+    "flag": "https://flagcdn.com/w40/jp.png",
     "path": "contributors/jp.json",
     "count": 1
   },
   {
     "name": "South Korea",
     "code": "kr",
-    "flag": "https://flagcdn.com/w80/kr.png",
+    "flag": "https://flagcdn.com/w40/kr.png",
     "path": "contributors/kr.json",
     "count": 9
   },
   {
     "name": "United States",
     "code": "us",
-    "flag": "https://flagcdn.com/w80/us.png",
+    "flag": "https://flagcdn.com/w40/us.png",
     "path": "contributors/us.json",
     "count": 1
   }
