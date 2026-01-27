@@ -1,8 +1,20 @@
 [
   {
+    "country": "Japan",
+    "code": "jp",
+    "path": "contributors/jp.json",
+    "count": 1
+  },
+  {
     "country": "South Korea",
     "code": "kr",
     "path": "contributors/kr.json",
     "count": 9
+  },
+  {
+    "country": "United States",
+    "code": "us",
+    "path": "contributors/us.json",
+    "count": 1
   }
 ]
