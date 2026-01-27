@@ -39,9 +39,9 @@ def get_country_info(name):
 
     # 국기 이미지 서비스 (flagcdn) 활용
     if code == "global":
-        flag_url = "https://flagcdn.com/w80/un.png"  # Global은 UN기로 대체
+        flag_url = "https://flagcdn.com/w40/un.png"  # Global은 UN기로 대체
     else:
-        flag_url = f"https://flagcdn.com/w80/{code}.png"
+        flag_url = f"https://flagcdn.com/w40/{code}.png"
         
     return code, full_name, flag_url
 
