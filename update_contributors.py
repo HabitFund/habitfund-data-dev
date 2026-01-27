@@ -7,12 +7,22 @@ import os as env_os
 SHEET_ID = env_os.environ.get('GOOGLE_SHEET_ID', '여기에_시트_ID_직접입력(테스트용)')
 SHEET_URL = f"https://docs.google.com/spreadsheets/d/1qfWSyzZ0ny2DZVRciA9dr_gYlp6UCierU5o6Mbo9UPU/export?format=csv"
 
-COUNTRY_MAP = {
-    "South Korea": "kr",
-    "United States": "en",
-    "Japan": "jp",
-    "Global": "global"
-}
+def get_country_code(name):
+    # 특수 케이스 예외 처리
+    exceptions = {
+        "South Korea": "kr",
+        "United States": "us",
+        "Global": "global"
+    }
+    if name in exceptions:
+        return exceptions[name]
+    
+    try:
+        # 국가명 검색 -> 2자리 코드(ISO 3166-1 alpha_2) 반환
+        return pycountry.countries.lookup(name).alpha_2.lower()
+    except:
+        # 라이브러리가 못 찾으면 공백을 언더바로 바꿔 파일명 생성
+        return name.lower().replace(" ", "_")
 
 def clean_category(val):
     if not val: return ""
@@ -33,7 +43,7 @@ def main():
     
     # 국가별 분류
     for country_name, group in df.groupby('Country'):
-        file_code = COUNTRY_MAP.get(country_name, country_name.lower().replace(" ", "_"))
+        file_code = get_country_code(country_name)
         filename = f"contributors/{file_code}.json"
         
         json_data = []

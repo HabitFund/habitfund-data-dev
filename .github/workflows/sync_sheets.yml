@@ -14,7 +14,7 @@ jobs:
         with:
           python-version: '3.9'
       - name: Install dependencies
-        run: pip install pandas
+        run: pip install pandas pycountry 
       - name: Run update script
         run: python update_contributors.py
       - name: Commit and Push
