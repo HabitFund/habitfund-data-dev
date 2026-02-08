@@ -16,6 +16,8 @@ jobs:
       - name: Install dependencies
         run: pip install pandas pycountry 
       - name: Run update script
+        env:
+            GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}      
         run: python update_contributors.py
       - name: Commit and Push
         run: |

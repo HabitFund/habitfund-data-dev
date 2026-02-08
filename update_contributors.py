@@ -5,11 +5,13 @@ import pycountry
 import urllib.parse
 
 # 1. 환경 변수에서 시트 ID 가져오기 (공백 제거 및 보안 유지)
-SHEET_ID = os.environ.get('GOOGLE_SHEET_ID', '').strip()
+SHEET_ID = os.environ.get('GOOGLE_SHEET_ID')
+if SHEET_ID:
+    SHEET_ID = SHEET_ID.strip()
 
 if not SHEET_ID:
-    # 로컬 테스트용 (Secrets가 설정되지 않았을 때의 Fallback)
-    SHEET_ID = "1qfWSyzZ0ny2DZVRciA9dr_gYlp6UCierU5o6Mbo9UPU"
+    print("❌ GOOGLE_SHEET_ID environment variable is not set. Aborting.")
+    sys.exit(1)
 
 # 안전하게 URL 인코딩 처리 (한글 등 방지)
 encoded_id = urllib.parse.quote(SHEET_ID)
