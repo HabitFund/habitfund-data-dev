@@ -46,6 +46,11 @@ def get_country_info(name):
             # 라이브러리가 찾지 못할 경우 기본 처리
             code = name.lower().replace(" ", "_")
             full_name = name
+            
+            # 슬랙으로 알림 전송
+            warning_msg = f"⚠️ Country lookup failed for '{name}'. Using fallback code: '{code}'"
+            print(warning_msg)
+            send_slack_message(warning_msg)
 
     # 국기 이미지 서비스 (flagcdn) 활용
     if code == "global":
@@ -103,11 +108,11 @@ def main():
     # index.json에 담을 국가 리스트
     index_data = []
     
-    # 2. 국가별 그룹화 및 개별 JSON 파일 생성
-    for country_name, group in df.groupby('Country'):
-        # 국가 상세 정보 획득
-        file_code, full_name, flag_url = get_country_info(country_name)
-        
+    # 2.if file_code != "global" and len(file_code) != 2:
+            error_msg = f"⚠️ Invalid country code detected!\nCountry: {country_name}\nCode: {file_code}\n(Expected 2 characters)"
+            print(error_msg)
+            send_slack_message(error_msg)
+
         file_name = f"{file_code}.json"
         relative_path = f"contributors/{file_name}"
         
