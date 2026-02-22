@@ -17,7 +17,8 @@ jobs:
         run: pip install pandas pycountry 
       - name: Run update script
         env:
-            GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}      
+            GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
+            SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         run: python update_contributors.py
       - name: Commit and Push
         run: |
