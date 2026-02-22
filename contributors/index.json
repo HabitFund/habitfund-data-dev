@@ -1,5 +1,47 @@
 [
   {
+    "country": "Afghanistan",
+    "code": "af",
+    "flag": "https://flagcdn.com/w40/af.png",
+    "path": "contributors/af.json",
+    "count": 1
+  },
+  {
+    "country": "Albania",
+    "code": "al",
+    "flag": "https://flagcdn.com/w40/al.png",
+    "path": "contributors/al.json",
+    "count": 1
+  },
+  {
+    "country": "Algeria",
+    "code": "dz",
+    "flag": "https://flagcdn.com/w40/dz.png",
+    "path": "contributors/dz.json",
+    "count": 1
+  },
+  {
+    "country": "Andorra",
+    "code": "ad",
+    "flag": "https://flagcdn.com/w40/ad.png",
+    "path": "contributors/ad.json",
+    "count": 1
+  },
+  {
+    "country": "Antigua and Barbuda",
+    "code": "ag",
+    "flag": "https://flagcdn.com/w40/ag.png",
+    "path": "contributors/ag.json",
+    "count": 1
+  },
+  {
+    "country": "Argentina",
+    "code": "ar",
+    "flag": "https://flagcdn.com/w40/ar.png",
+    "path": "contributors/ar.json",
+    "count": 1
+  },
+  {
     "country": "Japan",
     "code": "jp",
     "flag": "https://flagcdn.com/w40/jp.png",
