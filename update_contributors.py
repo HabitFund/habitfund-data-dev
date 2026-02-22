@@ -146,16 +146,15 @@ def main():
     print(f"\n🚀 All Done! Index file created at {index_filename}")
 
     # Slack 알림 전송
-    if SLACK_WEBHOOK_URL:
-        total_countries = len(index_data)
-        total_items = sum(item['count'] for item in index_data)
-        message = (
-            f"🚀 *HabitFund Data Update Complete*\n"
-            f"• Countries: {total_countries}\n"
-            f"• Total Contributors: {total_items}\n"
-            f"• Index File: `{index_filename}` created successfully."
-        )
-        send_slack_message(message)
+    total_countries = len(index_data)
+    total_items = sum(item['count'] for item in index_data)
+    message = (
+        f"🚀 *HabitFund Data Update Complete*\n"
+        f"• Countries: {total_countries}\n"
+        f"• Total Contributors: {total_items}\n"
+        f"• Index File: `{index_filename}` created successfully."
+    )
+    send_slack_message(message)
 
 if __name__ == "__main__":
     main()
