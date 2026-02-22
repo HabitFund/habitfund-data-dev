@@ -67,6 +67,13 @@
     "code": "us",
     "flag": "https://flagcdn.com/w40/us.png",
     "path": "contributors/us.json",
-    "count": 2
+    "count": 1
+  },
+  {
+    "country": "United States",
+    "code": "us",
+    "flag": "https://flagcdn.com/w40/us.png",
+    "path": "contributors/us.json",
+    "count": 1
   }
 ]
