@@ -42,6 +42,13 @@
     "count": 1
   },
   {
+    "country": "Armenia",
+    "code": "am",
+    "flag": "https://flagcdn.com/w40/am.png",
+    "path": "contributors/am.json",
+    "count": 1
+  },
+  {
     "country": "Japan",
     "code": "jp",
     "flag": "https://flagcdn.com/w40/jp.png",
