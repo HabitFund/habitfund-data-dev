@@ -108,11 +108,11 @@ def main():
     # index.json에 담을 국가 리스트
     index_data = []
     
-    # 2.if file_code != "global" and len(file_code) != 2:
-            error_msg = f"⚠️ Invalid country code detected!\nCountry: {country_name}\nCode: {file_code}\n(Expected 2 characters)"
-            print(error_msg)
-            send_slack_message(error_msg)
-
+    # 2. 국가별 그룹화 및 개별 JSON 파일 생성
+    for country_name, group in df.groupby('Country'):
+        # 국가 상세 정보 획득
+        file_code, full_name, flag_url = get_country_info(country_name)
+        
         file_name = f"{file_code}.json"
         relative_path = f"contributors/{file_name}"
         
