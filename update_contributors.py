@@ -1,6 +1,7 @@
 import pandas as pd
 import json
 import os
+import sys
 import pycountry
 import urllib.parse
 
@@ -23,7 +24,8 @@ def get_country_info(name):
     exceptions = {
         "South Korea": ("kr", "South Korea"),
         "United States": ("us", "United States"),
-        "Global": ("global", "Global")
+        "Global": ("global", "Global"),
+        "Russia": ("ru", "Russia"),
     }
     
     if name in exceptions:
