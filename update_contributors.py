@@ -5,6 +5,10 @@ import sys
 import pycountry
 import urllib.parse
 import urllib.request
+from dotenv import load_dotenv
+
+# .env 파일 로드
+load_dotenv()
 
 # 1. 환경 변수 설정
 SHEET_ID = os.environ.get('GOOGLE_SHEET_ID')
@@ -76,7 +80,7 @@ def send_slack_message(message):
         return
 
     payload = {
-        "text": message
+        "text": "== DEV ==\n" + message
     }
     
     try:
