@@ -14,7 +14,8 @@ jobs:
         with:
           python-version: '3.9'
       - name: Install dependencies
-        run: pip install pandas pycountry 
+        run: |
+          pip install -r requirements.txt
       - name: Run update script
         env:
             GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
