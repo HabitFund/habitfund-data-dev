@@ -80,7 +80,7 @@ def send_slack_message(message):
         return
 
     payload = {
-        "text": "== DEV ==\n" + message
+        "text": message
     }
     
     try:

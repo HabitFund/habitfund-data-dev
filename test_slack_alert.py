@@ -1,6 +1,6 @@
 import os
 import sys
-from update_contributors import get_country_info, send_slack_message
+from update_contributions import get_country_info, send_slack_message
 
 # 테스트를 위한 환경 변수 확인
 webhook_url = os.environ.get('SLACK_WEBHOOK_URL')

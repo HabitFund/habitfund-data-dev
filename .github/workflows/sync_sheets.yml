@@ -3,6 +3,8 @@ on:
   # schedule:
   #   - cron: '0 * * * *' # 매 시간마다 자동 실행
   workflow_dispatch:      # 필요할 때 수동 실행 버튼 활성화
+  repository_dispatch:    # Google Apps Script에서 트리거
+    types: [sheets-updated]
 
 jobs:
   update:
@@ -20,7 +22,7 @@ jobs:
         env:
             GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
             SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-        run: python update_contributors.py
+        run: python update_contributions.py
       - name: Commit and Push
         run: |
           git config --global user.name "GitHub Action"
