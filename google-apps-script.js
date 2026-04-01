@@ -1,5 +1,5 @@
 /**
- * HabitFund Data Dev - Google Sheets 자동 동기화
+ * HabitFund Data - Google Sheets 자동 동기화
  * 
  * 이 스크립트를 Google Sheets의 Apps Script에 추가하세요.
  * 변경 사항이 있을 때만 GitHub Actions를 트리거합니다.
@@ -96,6 +96,46 @@ function setup() {
   );
   
   Logger.log('Configuration saved successfully');
+}
+
+/**
+ * 수동 설정 함수 (대화상자 없이 직접 입력)
+ * 타임아웃 에러가 발생하면 이 함수를 사용하세요.
+ * 
+ * 사용법:
+ * 1. 아래 값을 수정
+ * 2. 이 함수 실행
+ */
+function manualSetup() {
+  // ========== 여기에 값을 직접 입력하세요 ==========
+  const token = 'ghp_YOUR_TOKEN_HERE';
+  const owner = 'YOUR_GITHUB_USERNAME';
+  const repo = 'habitfund-data';
+  const branch = 'main';
+  // =================================================
+  
+  // 검증
+  if (token === 'ghp_YOUR_TOKEN_HERE' || !token.startsWith('ghp_')) {
+    Logger.log('❌ GitHub Token을 설정하세요');
+    return;
+  }
+  
+  if (owner === 'YOUR_GITHUB_USERNAME') {
+    Logger.log('❌ GitHub Username을 설정하세요');
+    return;
+  }
+  
+  // 저장
+  PROPERTIES.setProperty('GITHUB_TOKEN', token);
+  PROPERTIES.setProperty('REPO_OWNER', owner);
+  PROPERTIES.setProperty('REPO_NAME', repo);
+  PROPERTIES.setProperty('BRANCH', branch);
+  
+  Logger.log('✅ 설정이 저장되었습니다.');
+  Logger.log(`GitHub: ${owner}/${repo} (${branch})`);
+  
+  const ui = SpreadsheetApp.getUi();
+  ui.alert('설정 완료', `GitHub: ${owner}/${repo} (${branch})`, ui.ButtonSet.OK);
 }
 
 /**
