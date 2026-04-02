@@ -1,5 +1,5 @@
 /**
- * HabitFund Data - Google Sheets 자동 동기화
+ * HabitFund Data DEV - Google Sheets 자동 동기화
  * 
  * 이 스크립트를 Google Sheets의 Apps Script에 추가하세요.
  * 변경 사항이 있을 때만 GitHub Actions를 트리거합니다.
@@ -91,7 +91,7 @@ function setup() {
   
   ui.alert(
     '설정 완료',
-    `GitHub: ${owner}/${repo} (${branch})\n\n이제 트리거를 설정하세요:\n1. onEdit - 수정 시\n2. checkAndTrigger - 5-10분마다`,
+    `GitHub: ${owner}/${repo} (${branch})\n\n이제 트리거를 설정하세요:\n1. onEdit - 셀 직접 수정 시\n2. onFormSubmit - 폼 제출 시\n3. checkAndTrigger - 5-10분마다`,
     ui.ButtonSet.OK
   );
   
@@ -110,7 +110,7 @@ function manualSetup() {
   // ========== 여기에 값을 직접 입력하세요 ==========
   const token = 'ghp_YOUR_TOKEN_HERE';
   const owner = 'YOUR_GITHUB_USERNAME';
-  const repo = 'habitfund-data';
+  const repo = 'habitfund-data-dev';
   const branch = 'main';
   // =================================================
   
@@ -176,15 +176,30 @@ function getConfig() {
 }
 
 /**
+ * 변경 플래그 설정 공통 함수
+ */
+function markChanged(source) {
+  const now = new Date().getTime();
+  PROPERTIES.setProperty('LAST_EDIT_TIME', now.toString());
+  PROPERTIES.setProperty('HAS_CHANGES', 'true');
+
+  Logger.log(`Change detected from ${source} at: ${new Date(now)}`);
+}
+
+/**
  * 스프레드시트 편집 시 자동 실행
  * 변경 플래그만 설정 (즉시 실행하지 않음)
  */
 function onEdit(e) {
-  const now = new Date().getTime();
-  PROPERTIES.setProperty('LAST_EDIT_TIME', now.toString());
-  PROPERTIES.setProperty('HAS_CHANGES', 'true');
-  
-  Logger.log('Change detected at: ' + new Date(now));
+  markChanged('onEdit');
+}
+
+/**
+ * 폼 제출 시 자동 실행
+ * 폼 응답으로 시트가 변경될 때 onEdit 대신 이 트리거가 동작
+ */
+function onFormSubmit(e) {
+  markChanged('onFormSubmit');
 }
 
 /**
