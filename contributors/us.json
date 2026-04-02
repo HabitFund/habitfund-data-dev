@@ -14,11 +14,23 @@
   },
   {
     "id": "us_002",
-    "name": "org",
+    "name": "org-1",
     "category": "religion",
     "country": "US",
     "tags": [],
     "url": "",
     "desc": "change test!!"
+  },
+  {
+    "id": "us_003",
+    "name": "org-2",
+    "category": "religion",
+    "country": "US",
+    "tags": [
+      "tag1",
+      "ta g2"
+    ],
+    "url": "https://org2.org",
+    "desc": "desc"
   }
 ]
